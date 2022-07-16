@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>我的好友</title>
+	<link rel="shortcut icon" href="music_img/icon12.ico">
+</head>
+<style type="text/css">
+	body{
+		background:url("music_img/style10.jpg") no-repeat center center;
+		background-size: cover;
+		background-attachment: fixed;
+	}
+	.f_list{
+		width: 500px;
+		height: 600px;
+		background-color: rgb(222,222,222);
+		margin: 100px auto;
+		border-radius: 10px;
+		overflow-y: auto;
+		overflow-x: hidden;
+	}
+	.hz{
+		width: 500px;
+		height: 70px;
+		background-color: rgb(255, 255, 255);
+		margin:auto;
+		position: relative;
+		top: 20px;
+	}
+	.greyfont{
+		position: relative;
+		top: 20px;
+		margin-left: 25px;
+		color: grey;
+	}
+	.head1{
+		width: 50px;
+		height: 50px;
+		border-radius: 100%;
+		margin-left: 30px;
+		margin-top: 10px;
+	}
+	.name{
+		position: relative;
+		top: -18px;
+		left: 20px;
+		font-size: 20px;
+	}
+	.link{
+		position: relative;
+		top: -18px;
+		left: 80px;
+		font-size: 10px;
+		color: black;
+		text-decoration: none;
+	}
+</style>
+<body>
+	<div class="f_list">
+		<span class="greyfont">会长</span>
+		<div class="hz">
+			<img class="head1" src="music_img/my01.jpg">
+			<span class='name'>小明</span>
+			<a href='index.html' class="link">他的官网</a>
+		</div>
+		<span class="greyfont">其他成员</span>
+	</div>
+</body>
+<script type="text/javascript">
+	var f_list=document.getElementsByClassName('f_list')[0];
+	var name_list=["李雨桐","刘洋筝","袁惠康","明天","邓昊睿","雨轩","峻奇","孙老师"];
+	for(var i=0;i<=7;i++){
+		var di_=document.createElement("div");
+		di_.className="hz";
+		di_.style.marginTop="20px";
+		f_list.appendChild(di_);}
+	var hz=document.getElementsByClassName("hz");
+	for(var i=1;i<hz.length;i++){
+		var im_=document.createElement('img');
+		im_.className="head1";
+		if(i+2<=9){
+			im_.setAttribute("src","music_img/my0"+(i+2)+".jpg");}
+		else{
+			im_.setAttribute("src","music_img/my"+(i+2)+".jpg");}
+		hz[i].appendChild(im_);
+		var spa_=document.createElement('span');
+		spa_.className="name";
+		spa_.innerHTML=name_list[i];
+		hz[i].appendChild(spa_);
+		var a_=document.createElement('a');
+		a_.className="link";
+		a_.href="index.html";a_.innerHTML="ta的网站";hz[i].appendChild(a_);}
+</script>
+</html>
